@@ -84,23 +84,23 @@ def handle_message(event):
 
 
     if message.startswith("インベントリ"):
-          l = message.split()
-          n = len(l)
-          buki = json.load(open('deve/Data/shibari.json'))
-          b = buki["buki"]
-          text = ""
-          if n == 2:
-              try:
+        l = message.split()
+        n = len(l)
+        buki = json.load(open('deve/Data/shibari.json'))
+        b = buki["buki"]
+        text = ""
+        if n == 2:
+            try:
                 if int(message[1]) <= 5 and int(message[1]) >= 1:
                     for i in range(int(message[1])):
                         text += f"{random.choice(b)}\n"
                 else:
-                 text = "Error\n1～5で入力してください"
-              except:
+                    text = "Error\n1～5で入力してください"
+            except:
                 text = "Error\n数字で入力して"
-          else:
+        else:
             text = "Error 400"
-          send()
+        send()
 
     elif message == "サーバー":
         server = [
@@ -116,14 +116,14 @@ def handle_message(event):
             send()
             return
         else:
-          shibari()
-          if "再ロール禁止" in text:
-            send()
-          else:
-              line_bot_api.reply_message(
+            shibari()
+            if "再ロール禁止" in text:
+                send()
+            else:
+                line_bot_api.reply_message(
                     event.reply_token,
                     TextSendMessage(
-                      text=text,
+                    text=text,
                         quick_reply=QuickReply(items=[
                             QuickReplyButton(
                                 action=MessageAction(label="再ロール", text="再ロール"))
@@ -169,7 +169,7 @@ def handle_message(event):
                         QuickReplyButton(
                             action=MessageAction(label="再ロール", text="再ロール 3")),
                         QuickReplyButton(action=MessageAction(label="矛盾してる？",
-                                                              text="再ロール 2"))
+                            text="再ロール 2"))
                     ])))
         elif l == 2 and n[1] == "3":
             shibari = json.load(open('deve/Data/shibari.json'))
@@ -184,7 +184,7 @@ def handle_message(event):
                     text=text1 + "\n" + text2 + "\n" + text3 + "\n" + text4,
                     quick_reply=QuickReply(items=[
                         QuickReplyButton(action=MessageAction(label="矛盾してる？",
-                                                              text="再ロール 3"))
+                            text="再ロール 3"))
                     ])))
 
         send()

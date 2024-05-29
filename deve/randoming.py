@@ -22,7 +22,7 @@ def inv():
   for i in range(random.randint(1,5)):
     tx += random.choice(lists["inv"]) + "\n"
   tx += "\n以上のもの以外持つべからず\n"
-  
+
 
 def shibari():
   global text
@@ -47,8 +47,8 @@ def shibari():
   text += shibari + "\n"
 
   if random.randint(1, 15) == 1:
-     a = random.randint(2,10)
-     text += f'\n一定ポイント行くまで継続(send me \"ポイント\")\n{a}マッチごとリセット'
+    a = random.randint(2,10)
+    text += f'\n一定ポイント行くまで継続(send me \"ポイント\")\n{a}マッチごとリセット'
   if random.randint(1, 15) == 1:
     text += "\n再ロール禁止"
 
@@ -70,4 +70,4 @@ def tsuika():
   for i in range(random.randint(1,3)):
     tsuika += random.choice(list["tsuika"]) + "\n"
   text = f"{rare}限定\n体力上限{heal}\n{tsuika}\nマッチ内で個人キル{kill}以上かつ部隊キル{butai}以上でビクロイするまで継続"
-  
+
