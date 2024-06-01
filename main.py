@@ -19,8 +19,8 @@ from linebot.models import ImageSendMessage, MessageAction, MessageEvent, QuickR
 app = Flask(__name__)
 
 #ボットの読み込み
-line_bot_api = LineBotApi(4MU4FKP8Vojr4Ueg/U1PqeGsgdpgCYWCb2nE9opqYQayIWGjleiGHoppKqY4aacmKen6UrXJGopWkFjyO9EFXmXAkhxBY5zLb5oeu3aylAsa+/MUcj+4ukURo/R9C3sDl8jAUO44X5akVFwc3CgW4QdB04t89/1O/w1cDnyilFU=)
-handler = WebhookHandler(525ae3ecdf87b1cbb8e18ce90ac9d63f)
+line_bot_api = LineBotApi("4MU4FKP8Vojr4Ueg/U1PqeGsgdpgCYWCb2nE9opqYQayIWGjleiGHoppKqY4aacmKen6UrXJGopWkFjyO9EFXmXAkhxBY5zLb5oeu3aylAsa+/MUcj+4ukURo/R9C3sDl8jAUO44X5akVFwc3CgW4QdB04t89/1O/w1cDnyilFU=")
+handler = WebhookHandler("525ae3ecdf87b1cbb8e18ce90ac9d63f")
 
 
 @app.route("/callback", methods=['POST'])
